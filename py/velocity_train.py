@@ -15,8 +15,6 @@ fpath = '/home/star/Desktop/idea/train/v/%s.mat'
 
 learning_rate, learning_rate_decay = 1e-4, 5e-7
 data_loss = 'mean_squared_error'
-#data_dim, timesteps, lstm_units = 2, 6, 18
-# data_dim, timesteps, lstm_units = 2, 7, 18
 data_dim, timesteps, lstm_units = 2, 6, 18
 
 

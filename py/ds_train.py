@@ -4,8 +4,10 @@ import numpy as np
 from bb_proc import get_iou, get_v
 import random
 
-# ===================================================================== TWO
-fpath = '/home/star/Desktop/idea/train/'
+
+# ===================================================================== ONE
+fpath = '../../../MOT17/train/'
+print(fpath)
 # len 7 //6 data a group
 foldername = ('MOT17-02-FRCNN', 'MOT17-04-FRCNN', 'MOT17-05-FRCNN',
               'MOT17-09-FRCNN', 'MOT17-10-FRCNN', 'MOT17-11-FRCNN',
@@ -30,7 +32,7 @@ ds_x = np.zeros((587599, 1), dtype='float32')
 ds_y = np.zeros((587599, 1), dtype='float32')
 ds_cnt = 0
 
-v_model = load_model('/home/star/Desktop/idea/v_model_LEN9.h5')
+v_model = load_model('/home/xie/Desktop/qi/MOT17/v_model.h5')
 # p_model = load_model('p_model.h5')
 
 for folder, res in zip(foldername, resolution):
