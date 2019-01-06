@@ -1,0 +1,11 @@
+img = imread('000064.jpg');
+imshow(img);
+hold on;
+left = 330;
+top = 228;
+width = 161;
+height = 322;
+x = [left, left, left+width, left+width, left];
+y = [top, top+height, top+height, top, top];
+plot(x, y, 'r-');
+hold off;

@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1085</width>
+    <height>852</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>10</y>
+     <width>461</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>基于相关滤波和深度神经网络的多目标跟踪系统</string>
+   </property>
+   <property name="margin">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="evatextBrowser">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>680</y>
+     <width>491</width>
+     <height>141</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="origroupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>470</y>
+     <width>451</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>原始数据展示</string>
+   </property>
+   <widget class="QRadioButton" name="orib2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-02</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-04</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib5">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-05</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-09</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib10">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-10</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib11">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-11</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="orib13">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-13</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="oriplay">
+    <property name="geometry">
+     <rect>
+      <x>398</x>
+      <y>60</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>播放</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="oriother">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>其他</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGraphicsView" name="newgraphicsView">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>70</y>
+     <width>481</width>
+     <height>391</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="newgroupBox">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>470</y>
+     <width>461</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>多目标跟踪算法跟踪效果展示</string>
+   </property>
+   <widget class="QRadioButton" name="newb2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-02</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb4">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-04</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb5">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-05</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb9">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-09</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb10">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-10</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb11">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>40</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-11</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newb13">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-13</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="newplay">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>60</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>播放</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="newother">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>其他</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>570</y>
+     <width>531</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>评估</string>
+   </property>
+   <widget class="QRadioButton" name="evab2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-02</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab4">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-04</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab5">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>30</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-05</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab9">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>30</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-09</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab10">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-10</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab11">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>50</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-11</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evab13">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-13</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="evaball">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>50</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17-ALL</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="evastart">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>开始评估</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="a1Button">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>610</y>
+     <width>99</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>算法1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>580</y>
+     <width>141</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>多目标跟踪算法选择</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>10</y>
+     <width>99</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>退出系统</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="a2Button">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>670</y>
+     <width>99</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>算法2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="a3Button">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>740</y>
+     <width>99</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>算法3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>610</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>相关滤波+深度神经网络：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>680</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>深度神经网络：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>740</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>相关滤波：</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="datagroupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>数据源</string>
+   </property>
+   <widget class="QRadioButton" name="mot17radioButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MOT17</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="otherradioButton">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>117</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>其他</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QProgressBar" name="progressBar1">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>610</y>
+     <width>118</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>670</y>
+     <width>118</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar3">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>740</y>
+     <width>118</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="orilabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>70</y>
+     <width>481</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="origraphicsView">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>70</y>
+     <width>481</width>
+     <height>391</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="newlabel">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>70</y>
+     <width>481</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1015</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1017</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>a1Button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>startProgress1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>347</x>
+     <y>623</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>a2Button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>startProgress2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>680</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>681</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>a3Button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>startProgress3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>752</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>752</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>oriplay</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>oridatashow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>543</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>484</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>newplay</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>newdatashow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1013</x>
+     <y>547</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1047</x>
+     <y>539</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>evastart</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>evaluation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>656</x>
+     <y>654</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>661</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>startProgress1()</slot>
+  <slot>startProgress2()</slot>
+  <slot>startProgress3()</slot>
+  <slot>oridatashow()</slot>
+  <slot>newdatashow()</slot>
+  <slot>evaluation()</slot>
+ </slots>
+</ui>
