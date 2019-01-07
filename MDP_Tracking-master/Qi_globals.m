@@ -14,7 +14,7 @@ opt.root = pwd;
 
 
 % mot_paths = {'/home/qi/projects'};
-mot_paths = {'/home/qi/benchmark'};
+mot_paths = {'/home/xie/Desktop/qi'};
 
 for i = 1:numel(mot_paths)   % only one path here!
     if exist(mot_paths{i}, 'dir')

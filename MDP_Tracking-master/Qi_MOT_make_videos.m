@@ -42,8 +42,9 @@ for seq_idx = 1:N
     end
     
     % read tracking results
-    filename = sprintf('/home/qi/benchmark/qiresults/%s/%s.txt', seq_set,seq_name);
+    filename = sprintf('/home/xie/Desktop/qi/Qi/LSTM_Qi_v27/py/results/%s/%s.txt', seq_set,seq_name);
 %     filename = sprintf('results_MOT/results_MOT_1/%s.txt', seq_name);
+    fprintf(filename);
     dres_track = read_mot2dres(filename);
     fprintf('read tracking results from %s\n', filename);
     ids = unique(dres_track.id);
