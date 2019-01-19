@@ -1,6 +1,6 @@
 # vim: expandtab:ts=4:sw=4
 from __future__ import division, print_function, absolute_import
-
+import matplotlib.pyplot as plt
 import numpy as np
 from operator import itemgetter
 from time import time
@@ -136,28 +136,34 @@ if __name__ == "__main__":
 
     if chosekind == 'FRCNN':
         print('current detection:%s\n' % chosekind)
-        test = True
-        # test = False
+        # test = True
+        test = False
         if test:
             # FRCNN test  One 1
             print('Here we test!\n')
-            fpath = '../../../MOT17/test/'
+            fpath = '../../test/'
             foldername = ('MOT17-01-FRCNN', 'MOT17-03-FRCNN', 'MOT17-06-FRCNN',
                           'MOT17-07-FRCNN', 'MOT17-08-FRCNN', 'MOT17-12-FRCNN',
                           'MOT17-14-FRCNN')
             resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
                           (1920, 1080), (1920, 1080), (1920, 1080))
             length = (450, 1500, 1194, 500, 625, 900, 750)
+            # foldername = ('MOT17-01-FRCNN', 'MOT17-07-FRCNN')
+            # resolution = ((1920, 1080), (1920, 1080))
+            # length = (450, 500)
         else:
             # FRCNN train
             print('Here we train!\n')
-            fpath = '../../../MOT17/train/'
-            foldername = ('MOT17-02-FRCNN', 'MOT17-04-FRCNN', 'MOT17-05-FRCNN',
-                          'MOT17-09-FRCNN', 'MOT17-10-FRCNN', 'MOT17-11-FRCNN',
-                          'MOT17-13-FRCNN')
-            resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
-                          (1920, 1080), (1920, 1080), (1920, 1080))
-            length = (600, 1050, 837, 525, 654, 900, 750)
+            fpath = '../../train/'
+            # foldername = ('MOT17-02-FRCNN', 'MOT17-04-FRCNN', 'MOT17-05-FRCNN',
+            #               'MOT17-09-FRCNN', 'MOT17-10-FRCNN', 'MOT17-11-FRCNN',
+            #               'MOT17-13-FRCNN')
+            # resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
+            #               (1920, 1080), (1920, 1080), (1920, 1080))
+            # length = (600, 1050, 837, 525, 654, 900, 750)
+            foldername = ('MOT17-02-FRCNN', 'MOT17-09-FRCNN')
+            resolution = ((1920, 1080), (1920, 1080))
+            length = (600, 525)
 
         threshold_l = 0  # low detection threshold
         threshold_h = 0.9  # high detection threshold
@@ -166,89 +172,21 @@ if __name__ == "__main__":
         threshold_s2 = 0.4  # score threshold for id shorter than 7 frames
         n_init = 4  # time threshold
 
-        alpha = 1
-        beta = 1
+        alpha = 0.5
+        beta = 0.5
         theta = 0.2    #0.1 0.08 47.4  0.2 47.5 0.3(pass) 0.25(pass 47.4)
-
-    elif chosekind == 'SDP':
-        print('current detection:%s\n' % chosekind)
-        # test = True
-        test = False
-        if test:
-            # SDP test   Two 2
-            print('Here we test!\n')
-            fpath = '../../MOT17/test/'
-            foldername = ('MOT17-01-SDP', 'MOT17-03-SDP', 'MOT17-06-SDP',
-                          'MOT17-07-SDP', 'MOT17-08-SDP', 'MOT17-12-SDP',
-                          'MOT17-14-SDP')
-            resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
-                          (1920, 1080), (1920, 1080), (1920, 1080))
-            length = (450, 1500, 1194, 500, 625, 900, 750)
-        else:
-            # SDP train
-            print('Here we train!\n')
-            fpath = '../../MOT17/train/'
-
-            foldername = ('MOT17-02-SDP', 'MOT17-04-SDP', 'MOT17-05-SDP',
-                          'MOT17-09-SDP', 'MOT17-10-SDP', 'MOT17-11-SDP',
-                          'MOT17-13-SDP')
-            resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
-                          (1920, 1080), (1920, 1080), (1920, 1080))
-            length = (600, 1050, 837, 525, 654, 900, 750)
-
-        threshold_l = 0.3  # low detection threshold
-        threshold_h = 0.5  # high detection threshold
-        threshold_s = 0.0359  # score threshold
-
-        theshold_s2 = 0.3  # score threshold for id shorter than 7 frames
-        n_init = 5  # time threshold
-
-        alpha = 1
-        beta = 1
-        theta = 0.08         # to small 0.3 60.9 0.2 61.3 0.1 61.5 0.08 61.5 0.09 61.5(pass)
-
-    elif chosekind == 'DPM':
-        print('current detection:%s\n' % chosekind)
-        # test = True
-        test = False
-        if test:
-            # DPM test
-            print('Here we test!\n')
-            fpath = '../../MOT17/test/'
-            foldername = ('MOT17-01-DPM', 'MOT17-03-DPM', 'MOT17-06-DPM',
-                          'MOT17-07-DPM', 'MOT17-08-DPM', 'MOT17-12-DPM',
-                          'MOT17-14-DPM')
-            resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
-                          (1920, 1080), (1920, 1080), (1920, 1080))
-            length = (450, 1500, 1194, 500, 625, 900, 750)
-        else:
-            # DPM train
-            print('Here we train!\n')
-            fpath = '../../MOT17/train/'
-            foldername = ('MOT17-02-DPM', 'MOT17-04-DPM', 'MOT17-05-DPM',
-                          'MOT17-09-DPM', 'MOT17-10-DPM', 'MOT17-11-DPM',
-                          'MOT17-13-DPM')
-            resolution = ((1920, 1080), (1920, 1080), (640, 480), (1920, 1080),
-                          (1920, 1080), (1920, 1080), (1920, 1080))
-            length = (600, 1050, 837, 525, 654, 900, 750)
-
-        threshold_l = -10  # low detection threshold
-        threshold_h = -9  # high detection threshold
-        threshold_s = 0.0155  # score threshold
-
-        threshold_s2 = 0.36  # score threshold for id shorter than 7 frames
-        # t_min = 7  # time threshold ,that is n_init
-        n_init = 7  # 4(25.0)    #5(25.7)    #6(26.1)   #7(26.4-3333s)  #8(26.4-1242s)
-
-        alpha = 1
-        beta = 1
-        theta = 0.07    #0.1 33.2 0.2 32.9 so to small 0.08 33.3
-
 
     else:
         print('please chose right sequence.\n')
 
     time_cnt = 0
+
+    similarityappsave = []
+    similaritymotionsave = []
+    similaritysave = []
+    match_scoressave = []
+
+
     # %%
     # start tracking
     for folder, res, l in zip(foldername, resolution, length):
@@ -385,12 +323,24 @@ if __name__ == "__main__":
 
                             # match_scores[det_num] = ds_score(
                               #  id_, det[2:6], res)[0][0]
-                            similaritymotion = ds_score(
-                                id_, det[2:6], res)[0][0]
+                            # similaritymotion = ds_score(
+                            #     id_, det[2:6], res)[0][0]
+                            #TODO Zhao Qingyu ADD START
+                            similaritymotion = ds_score(id_, det[2:6], res)
 
-                            similarity = alpha * similarityapp * beta * similaritymotion
+
+
+
+                            similarity = alpha * similarityapp + beta * similaritymotion
+
+
+
 
                             match_scores[det_num] = similarity
+
+                            similarityappsave.append(similarityapp)
+                            similaritymotionsave.append(similaritymotion)
+                            similaritysave.append(similarity)
 
 
                     best_match = dets_f[match_scores.argmax()]
@@ -478,4 +428,29 @@ if __name__ == "__main__":
             for bb in result_bb:
                 rst_f.write(','.join([str(value) for value in bb]) + '\n')
 
+
+    # np.savetxt("similarityapp.txt", similarityapp)
+    # np.savetxt("similaritymotion.txt", similaritymotion)
+    # np.savetxt("similarity.txt", similarity)
+    plt.subplot(221)
+    x_1 = range(len(similarityappsave[0:30]))
+    plt.plot(x_1, similarityappsave[0:30], 'b-', label="1", marker='*', markersize=7, linewidth=3)
+    file = open('similarityapp.txt', 'w')
+    file.write(str(similarityappsave))
+    file.close()
+    plt.subplot(222)
+    x = range(len(similaritymotionsave[0:30]))
+    plt.plot(x, similaritymotionsave[0:30], 'b-', label="2", marker='*', markersize=7, linewidth=3)
+    file = open('similaritymotion.txt', 'w')
+    file.write(str(similaritymotionsave))
+    file.close()
+    plt.subplot(223)
+    x = range(len(similaritysave[0:30]))
+    plt.plot(x, similaritysave[0:30], 'b-', label="3", marker='*', markersize=7, linewidth=3)
+
+    file = open('similarity.txt', 'w')
+    file.write(str(similaritysave))
+    file.close()
+
+    plt.show()
     print('Total tracking time consumption:', time_cnt, 's.')

@@ -8,14 +8,14 @@ base = [pwd, '/'];
 
 addpath(fullfile(base, 'utils'));
 
-opt.mot = '/home/qi/projects';
-opt.mot2d = 'MOT17';
+opt.mot = '/home/star/Desktop';
+opt.mot2d = 'idea';
 
 % opt.results = '/home/qi/projects/LSTM_Qi_v1/py/results';  % ORIGINAL  60.6   DPM 21.4
 % opt.results = '/home/qi/projects/LSTM_Qi_v10/py/results';
 
 % opt.results = '/home/qi/projects/LSTM_Qi_v27/py/resultskalmanfilter';
-opt.results = '/home/qi/projects/LSTM_Qi_v27/py/results';
+opt.results = '/home/star/Desktop/idea/LSTM_Qi_v27/py/results';
 
 % opt.results = '/home/qi/projects/LSTM_Qi_v27/py/MOTDT17';       % sdp 57.7
 % opt.results = '/home/qi/projects/LSTM_Qi_v27/py/HDTR_17';       % sdp 53.6
@@ -50,8 +50,8 @@ benchmark_dir = fullfile(opt.mot, opt.mot2d, seq_set_test, filesep);
 % evaluateTracking(seqs, opt.results, benchmark_dir);
 %%
 % % FRCNN Detector  % 46.8
-% seqs = {'MOT17-02-FRCNN', 'MOT17-04-FRCNN', 'MOT17-05-FRCNN', 'MOT17-09-FRCNN',...
-%     'MOT17-10-FRCNN', 'MOT17-11-FRCNN', 'MOT17-13-FRCNN'};
+seqs = {'MOT17-02-FRCNN', 'MOT17-04-FRCNN', 'MOT17-05-FRCNN', 'MOT17-09-FRCNN',...
+     'MOT17-10-FRCNN', 'MOT17-11-FRCNN', 'MOT17-13-FRCNN'};
 % evaluateTracking(seqs, opt.results, benchmark_dir);
 
 % % % DPM Detector
@@ -61,8 +61,8 @@ benchmark_dir = fullfile(opt.mot, opt.mot2d, seq_set_test, filesep);
 
 
 % % % SDP Detector
-seqs = {'MOT17-02-SDP', 'MOT17-04-SDP', 'MOT17-05-SDP', 'MOT17-09-SDP', 'MOT17-10-SDP', ...
-'MOT17-11-SDP', 'MOT17-13-SDP'};
+% seqs = {'MOT17-02-SDP', 'MOT17-04-SDP', 'MOT17-05-SDP', 'MOT17-09-SDP', 'MOT17-10-SDP', ...
+% 'MOT17-11-SDP', 'MOT17-13-SDP'};
 evaluateTracking(seqs, opt.results, benchmark_dir);
 
 % % all detectors

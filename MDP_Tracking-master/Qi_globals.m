@@ -14,7 +14,7 @@ opt.root = pwd;
 
 
 % mot_paths = {'/home/qi/projects'};
-mot_paths = {'/home/xie/Desktop/qi'};
+mot_paths = {'/home/star/Desktop/'};
 
 for i = 1:numel(mot_paths)   % only one path here!
     if exist(mot_paths{i}, 'dir')
@@ -29,7 +29,7 @@ opt.method = 'FRCNN';
 % opt.method = 'SDP';
 % opt.method = 'YOLOv3';
 
-opt.mot2d = 'MOT17';
+opt.mot2d = 'idea';
 opt.results = 'results';
 
 

@@ -3,6 +3,7 @@ from scipy import io
 import numpy as np
 from bb_proc import get_iou, get_v
 import random
+# TODO delete this file, and change method to just velocity model, vector a minus vector b, and then calculate the abs value.
 
 
 # ===================================================================== ONE
@@ -32,7 +33,7 @@ ds_x = np.zeros((587599, 1), dtype='float32')
 ds_y = np.zeros((587599, 1), dtype='float32')
 ds_cnt = 0
 
-v_model = load_model('/home/xie/Desktop/qi/MOT17/v_model.h5')
+v_model = load_model('/home/star/Desktop/idea/v_model_LEN9.h5')
 # p_model = load_model('p_model.h5')
 
 for folder, res in zip(foldername, resolution):
@@ -45,7 +46,7 @@ for folder, res in zip(foldername, resolution):
         if bb_id.shape[0] == 0:
             continue
         max_frame = bb_id[:, 0].max()
-        min_frame=bb_id[:, 0].min()
+        min_frame = bb_id[:, 0].min()
         bb_list = np.zeros((7, 4))
         v_list = np.zeros((6, 2), dtype='float32')
         # p_list = np.zeros((6, 1), dtype='float32')
@@ -73,9 +74,9 @@ for folder, res in zip(foldername, resolution):
                 # p_list_4_pred[0] = p_list
 
                 v_loss = v_model.evaluate(
-                    x=v_list_4_pred, y=current_v, batch_size=1, verbose=0)
+                    x=v_list_4_pred, y=current_v, batch_size=1, verb  ose=0)
                 # p_loss = p_model.evaluate(
-                    # x=p_list_4_pred, y=current_p, batch_size=1, verbose=0)
+                # x=p_list_4_pred, y=current_p, batch_size=1, verbose=0)
                 v_loss = v_loss[0]
 
                 # saves positive samples
@@ -96,7 +97,7 @@ for folder, res in zip(foldername, resolution):
                     v_loss = v_model.evaluate(
                         x=v_list_4_pred, y=neg_v, batch_size=1, verbose=0)
                     # p_loss = p_model.evaluate(
-                        # x=p_list_4_pred, y=neg_p, batch_size=1, verbose=0)
+                    # x=p_list_4_pred, y=neg_p, batch_size=1, verbose=0)
                     v_loss = v_loss[0]
                     ds_x[ds_cnt] = np.array([v_loss], dtype='float32')
                     ds_y[ds_cnt] = np.array([0], dtype='float32')
