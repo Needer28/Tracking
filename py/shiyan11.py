@@ -30,7 +30,7 @@ def gather_sequence_info(sequence_dir, detection_file):
     -------
     Dict
         A dictionary of the following sequence information:
-
+low
         * sequence_name: Name of the sequence
         * image_filenames: A dictionary that maps frame indices to image
           filenames.
@@ -141,7 +141,7 @@ if __name__ == "__main__":
         if test:
             # FRCNN test  One 1
             print('Here we test!\n')
-            fpath = '../../../MOT17/test/'
+            fpath = '/home/star/Desktop/idea/test/'
             foldername = ('MOT17-01-FRCNN', 'MOT17-03-FRCNN', 'MOT17-06-FRCNN',
                           'MOT17-07-FRCNN', 'MOT17-08-FRCNN', 'MOT17-12-FRCNN',
                           'MOT17-14-FRCNN')
@@ -474,7 +474,7 @@ if __name__ == "__main__":
                 result_bb += [[id_['f_start'] + bb_num, id_num + 1, bb[0], bb[1],
                                bb[2], bb[3], -1, -1, -1, -1]]
         result_bb.sort(key=itemgetter(1, 0))
-        with open('./results/%s.txt' % folder, 'w') as rst_f:
+        with open('/home/star/Desktop/idea/LSTM_Qi_v27/py/results/%s.txt' % folder, 'w') as rst_f:
             for bb in result_bb:
                 rst_f.write(','.join([str(value) for value in bb]) + '\n')
 

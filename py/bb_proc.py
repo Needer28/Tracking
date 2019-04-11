@@ -10,7 +10,7 @@ scale_factor = 180
 
 v_model = load_model('/home/star/Desktop/idea/v_model_LEN9.h5')
 
-
+ds_model = load_model('/home/star/Desktop/idea/ds_model.h5')
 def get_iou(bb_a, bb_b):
     """
     calculates the intersection over union of two bounding boxes
