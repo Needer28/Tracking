@@ -286,8 +286,8 @@ if __name__ == "__main__":
             print('current frame is %d\n' % curframe)
 
             # the detections of current frame =================================
-            dets_f = dets[dets[:, 0] == f_num, :]
-            dets_f = dets_f[dets_f[:, 6] > threshold_l, :]  # filter detection
+            dets_f = dets[dets[:, 0] == f_num, :]#取出当前帧的检测结果
+            dets_f = dets_f[dets_f[:, 6] > threshold_l, :]  # filter detection#取出置信度大于阈值的检测结果
             if dets_f.shape[0] == 0:
                 continue
 
@@ -314,7 +314,7 @@ if __name__ == "__main__":
             # match_cosdistance = np.zeros(dets_f.shape[0], dtype='float32')   # zero initiation
             # match_eudistance = np.zeros(dets_f.shape[0], dtype='float32')
 
-            match_cosdistance = np.ones(dets_f.shape[0], dtype='float32')  # one iinitiation
+            match_cosdistance = np.ones(dets_f.shape[0], dtype='float32')  # one initiation
             # match_eudistance = np.ones(dets_f.shape[0], dtype='float32')
 
             id_updated = []
