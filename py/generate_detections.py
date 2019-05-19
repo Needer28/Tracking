@@ -208,8 +208,8 @@ def main():
     model = "resources/networks/mars-small128.pb"
     encoder = create_box_encoder(model, batch_size=1)  #32
     # mot_dir = '/home/qi/benchmark/MOT17/detandtracking'
-    mot_dir = '/home/qi/benchmark/MOT17/detandtracking'
-    output_dir = '/home/qi/benchmark/MOT17/detandtracking/MOT17-02/det'
+    mot_dir = '/home/star/Desktop/idea/MOT17'
+    output_dir = '/home/star/Desktop/idea/results'
     detection_dir = None
 
     generate_detections(encoder, mot_dir, output_dir,
